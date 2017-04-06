@@ -1,0 +1,17 @@
+nav {
+  margin-right: 2px;
+  float: right;
+  a {
+    color: white;
+  }
+
+  a:hover {
+    color: deepskyblue;
+    text-decoration: none;
+  }
+
+  .active {
+    color: deepskyblue;
+  }
+}
+
