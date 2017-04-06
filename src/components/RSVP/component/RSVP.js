@@ -42,7 +42,7 @@ class RSVP extends Component {
     console.log("props", this.props)
     console.log("state", this.state)
     return (
-      <div className="page-four-bg">
+      <div className="page-four-bg container-fluid">
         <Navigation />
         <h1>RSVP</h1>
         <RSVPForm

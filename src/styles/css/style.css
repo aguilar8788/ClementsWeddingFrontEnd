@@ -105,11 +105,28 @@ nav {
     color: deepskyblue; }
 
 .infoPage h1 {
-  color: white; }
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10em;
+  font-family: "Savoye LET"; }
 .infoPage p {
   color: white; }
+.infoPage .infoContainer {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 .infoPage .coupleImage {
-  width: 200px;
+  width: 300px;
+  margin-left: 10px;
   border-radius: 50%; }
+.infoPage .infoText {
+  width: 70%;
+  font-size: 18px;
+  font-family: "Arial Narrow"; }
 
 /*# sourceMappingURL=style.css.map */

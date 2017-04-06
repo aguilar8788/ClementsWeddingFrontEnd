@@ -16,7 +16,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-polyfill": "6.8.0",
-    "bootstrap": "3.3.6",
+    "bootstrap": "^4.0.0-alpha.2",
     "jquery": "2.2.3",
     "react": "15.0.2",
     "react-dom": "15.0.2",
