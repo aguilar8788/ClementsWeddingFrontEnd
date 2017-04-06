@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
 import * as rsvpActions from '../action/RSVPActions'
 import RSVPForm from '../../form/FormComponent'
+import MusicSearch from '../../form/MusicSearchFormComponent'
 
 class RSVP extends Component {
   constructor(props, context) {
@@ -42,15 +43,17 @@ class RSVP extends Component {
     console.log("props", this.props)
     console.log("state", this.state)
     return (
-      <div className="page-four-bg container-fluid">
+      <div className="page-four-bg rsvpPage container-fluid">
         <Navigation />
-        <h1>RSVP</h1>
-        <RSVPForm
-          onSave={this.saveRSVP}
-          onChange={this.updateRSVPState}
-          options={["2", "3"]}
-          secondaryOptions={["Beef", "Chicken"]}
-        />
+        <div className="row formContainer">
+          <RSVPForm
+            onSave={this.saveRSVP}
+            onChange={this.updateRSVPState}
+            options={["2", "3", "4"]}
+            secondaryOptions={["Beef", "Chicken"]}
+          />
+          <MusicSearch onSave="" onChange=""/>
+        </div>
       </div>
     )
   }
@@ -68,30 +71,30 @@ RSVP.contextTypes = {
 function mapStateToProps(state, ownProps) {
   const rsvpId = ownProps.params.id
   let rsvp = [{
-      contactInfo: {
-        firstName: '',
-        lastName: '',
-        emailAddress: '',
-        phoneNumber: '',
-        streetAddress: {
-          line1: '',
-          line2: '',
-          city: '',
-          state: '',
-          zip: ''
-        }
-      },
-      attending: '',
-      numberOfAttending: 0,
-      mealChoice: [],
-      songRequest: [
-        {
-          artist: '',
-          albumName: '',
-          songName: ''
-        }
-      ]
-    }
+    contactInfo: {
+      firstName: '',
+      lastName: '',
+      emailAddress: '',
+      phoneNumber: '',
+      streetAddress: {
+        line1: '',
+        line2: '',
+        city: '',
+        state: '',
+        zip: ''
+      }
+    },
+    attending: '',
+    numberOfAttending: 0,
+    mealChoice: [],
+    songRequest: [
+      {
+        artist: '',
+        albumName: '',
+        songName: ''
+      }
+    ]
+  }
   ]
 
   return {

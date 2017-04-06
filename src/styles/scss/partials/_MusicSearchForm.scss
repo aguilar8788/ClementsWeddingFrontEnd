@@ -1,0 +1,22 @@
+.musicForm {
+  width: 30%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 2%;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+  .searchResults {
+    width: 100%;
+
+    .songInfo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+
+  .musicSearchInput {
+    border-bottom: 1px solid black;
+    width: 100%;
+  }
+}

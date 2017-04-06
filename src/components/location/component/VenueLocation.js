@@ -5,7 +5,7 @@ class VenueLocation extends Component {
     render() {
         return (
             <div className="page-two-bg container-fluid">
-                 <Navigation path={this.props.location}/>
+                 <Navigation />
                 <h1>location</h1>
             </div>
         )

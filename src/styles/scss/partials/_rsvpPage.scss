@@ -1,0 +1,33 @@
+@import "../mixins/mainHeading";
+
+.rsvpPage {
+  @include mainHeadingStyle();
+  .formComponent {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .formContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+  }
+
+  .Form {
+    width: 45vw;
+    height: auto;
+  }
+
+  .musicForm {
+    width: 30vw;
+  }
+
+  .songsToSubmit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

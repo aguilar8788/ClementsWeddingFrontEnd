@@ -1,0 +1,11 @@
+@mixin mainHeadingStyle() {
+  h1 {
+    margin-top: 2%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10em;
+    font-family: "Savoye LET";
+  }
+}
