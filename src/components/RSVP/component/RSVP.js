@@ -33,10 +33,17 @@ class RSVP extends Component {
     return this.setState({rsvp})
   }
 
+
   saveRSVP(event) {
     event.preventDefault()
     this.props.actions.saveRSVP(this.state.rsvp)
     this.context.router.push('/location')
+  }
+
+  addSong(event) {
+    event.preventDefault()
+    this.props.actions.addSong(this.state.rsvp)
+    rsvpActions.fetchSong(this.state.rsvp.songName)
   }
 
   render() {
@@ -52,7 +59,7 @@ class RSVP extends Component {
             options={["2", "3", "4"]}
             secondaryOptions={["Beef", "Chicken"]}
           />
-          <MusicSearch onSave="" onChange=""/>
+          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState}/>
         </div>
       </div>
     )

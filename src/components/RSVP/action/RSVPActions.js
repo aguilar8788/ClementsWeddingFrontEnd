@@ -4,6 +4,7 @@ import {
   UPDATE_RSVP_SUCCESS
 } from '../../../actions/actionTypes'
 import RSVPApi from '../../../api/mockRSVPApi'
+import axios from 'axios';
 
 export function loadRSVPSuccess(rsvps) {
   return {type: LOAD_RSVP_SUCCESS, rsvps}
@@ -36,4 +37,12 @@ export function saveRSVP(rsvp) {
       throw(error)
     })
   }
+}
+
+export function fetchSong(search) {
+  //return dispatch => {
+  //dispatch(requestPosts(subreddit))
+  return axios.get(`http://localhost:8080/song-list/${search}`)
+    .then(response => console.log("response", response.data))
+  //}
 }

@@ -7,9 +7,16 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) 
       <form className="musicForm">
         <div className="musicSearchInput">
           <TextInput
-            name="firstName"
-            label="First Name"
+            name="songName"
+            label="Song Name"
             onChange={onChange}
+          />
+          <input
+            type="submit"
+            disabled={loading}
+            value={loading ? 'Saving...' : 'Submit RSVP'}
+            className="btn btn-primary"
+            onClick={onSave}
           />
         </div>
         <div className="searchResults">
