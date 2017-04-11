@@ -2,6 +2,7 @@ import React, {PropTypes} from 'react'
 import TextInput from '../common/TextInput'
 
 const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) => {
+  console.log("options", options)
   return (
     <div className="formComponent ">
       <form className="musicForm">
@@ -22,7 +23,7 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) 
         <div className="searchResults">
           <ul>
             <ul className="songInfo">
-              <li>song 1</li>
+
               <li>album 2</li>
               <li>artist 3</li>
               <button>add song</button>

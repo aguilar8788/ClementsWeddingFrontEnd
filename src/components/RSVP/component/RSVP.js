@@ -16,6 +16,7 @@ class RSVP extends Component {
 
     this.updateRSVPState = this.updateRSVPState.bind(this)
     this.saveRSVP = this.saveRSVP.bind(this)
+    this.addSong = this.addSong.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -41,14 +42,14 @@ class RSVP extends Component {
   }
 
   addSong(event) {
+    console.log("starting")
     event.preventDefault()
-    this.props.actions.addSong(this.state.rsvp)
-    rsvpActions.fetchSong(this.state.rsvp.songName)
+    this.props.actions.fetchSong(this.state.rsvp.songName)
   }
 
   render() {
     console.log("props", this.props)
-    console.log("state", this.state)
+    console.log("state", this.state.songs)
     return (
       <div className="page-four-bg rsvpPage container-fluid">
         <Navigation />
@@ -59,7 +60,7 @@ class RSVP extends Component {
             options={["2", "3", "4"]}
             secondaryOptions={["Beef", "Chicken"]}
           />
-          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState}/>
+          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState} options={[]} />
         </div>
       </div>
     )
@@ -105,7 +106,8 @@ function mapStateToProps(state, ownProps) {
   ]
 
   return {
-    rsvp: rsvp
+    rsvp: rsvp,
+    songs: state.songs
   }
 }
 

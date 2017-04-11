@@ -1,7 +1,8 @@
 import {
   CREATE_RSVP_SUCCESS,
   LOAD_RSVP_SUCCESS,
-  UPDATE_RSVP_SUCCESS
+  UPDATE_RSVP_SUCCESS,
+  ADD_SONG_SUCCESS
 } from '../../../actions/actionTypes'
 import RSVPApi from '../../../api/mockRSVPApi'
 import axios from 'axios';
@@ -16,6 +17,10 @@ export function createRSVP(rsvp) {
 
 export function updaterRSVPSuccess(rsvp) {
   return {type: UPDATE_RSVP_SUCCESS, rsvp}
+}
+
+export function addSongSuccess(songs) {
+  return {type: ADD_SONG_SUCCESS, songs}
 }
 
 export function loadRSVPs() {
@@ -40,9 +45,14 @@ export function saveRSVP(rsvp) {
 }
 
 export function fetchSong(search) {
-  //return dispatch => {
-  //dispatch(requestPosts(subreddit))
-  return axios.get(`http://localhost:8080/song-list/${search}`)
-    .then(response => console.log("response", response.data))
-  //}
+  console.log('second stage')
+  return function (dispatch, getState) {
+    return axios.get(`http://localhost:8080/song-list/${search}`)
+      .then(response => {
+        dispatch(addSongSuccess(response.data.results))
+      })
+      .catch(error => {
+        throw(error)
+      })
+  }
 }

@@ -1,3 +1,4 @@
 export default {
-  rsvps: []
+  rsvps: [],
+  songs: []
 }
