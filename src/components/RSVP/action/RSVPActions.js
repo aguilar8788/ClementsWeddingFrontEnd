@@ -45,10 +45,10 @@ export function saveRSVP(rsvp) {
 }
 
 export function fetchSong(search) {
-  console.log('second stage')
   return function (dispatch, getState) {
     return axios.get(`http://localhost:8080/song-list/${search}`)
       .then(response => {
+        console.log("reponse in actions", response)
         dispatch(addSongSuccess(response.data.results))
       })
       .catch(error => {

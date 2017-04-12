@@ -2,7 +2,22 @@ import React, {PropTypes} from 'react'
 import TextInput from '../common/TextInput'
 
 const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) => {
-  console.log("options", options)
+  if (options[0]) {
+    console.log("options in music form", options[0].artistName)
+  }
+
+  function formatMusicDate(data) {
+    return data.map(song => {
+      return (
+        <ul className="songInfo">
+          <li>{song.artistName}</li>
+          <li>{song.trackName}</li>
+          <li>{song.collectionName}<button>add song</button></li>
+        </ul>
+      )
+    })
+  }
+
   return (
     <div className="formComponent ">
       <form className="musicForm">
@@ -13,21 +28,19 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) 
             onChange={onChange}
           />
           <input
-            type="submit"
+            type="searchSong"
             disabled={loading}
-            value={loading ? 'Saving...' : 'Submit RSVP'}
+            value={loading ? 'Saving...' : 'Search'}
             className="btn btn-primary"
             onClick={onSave}
           />
         </div>
         <div className="searchResults">
           <ul>
-            <ul className="songInfo">
 
-              <li>album 2</li>
-              <li>artist 3</li>
-              <button>add song</button>
-            </ul>
+
+              {options ? formatMusicDate(options) : " "}
+
           </ul>
         </div>
       </form>

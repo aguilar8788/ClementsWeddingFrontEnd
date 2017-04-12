@@ -21,8 +21,9 @@ class RSVP extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.rsvp.id != nextProps.rsvp.id) {
-      this.setState({course: Object.assign({}, nextProps.rsvp)})
+      this.setState({rsvp: Object.assign({}, nextProps.rsvp)})
     }
+    this.setState({songs: Object.assign({}, nextProps.songs)})
   }
 
   updateRSVPState(event) {
@@ -42,14 +43,13 @@ class RSVP extends Component {
   }
 
   addSong(event) {
-    console.log("starting")
     event.preventDefault()
     this.props.actions.fetchSong(this.state.rsvp.songName)
   }
 
   render() {
     console.log("props", this.props)
-    console.log("state", this.state.songs)
+    console.log("state", this.state)
     return (
       <div className="page-four-bg rsvpPage container-fluid">
         <Navigation />
@@ -60,7 +60,7 @@ class RSVP extends Component {
             options={["2", "3", "4"]}
             secondaryOptions={["Beef", "Chicken"]}
           />
-          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState} options={[]} />
+          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState} options={this.props.songs} />
         </div>
       </div>
     )
@@ -77,6 +77,7 @@ RSVP.contextTypes = {
 }
 
 function mapStateToProps(state, ownProps) {
+  console.log("state in props", state.MusicSearchReducer)
   const rsvpId = ownProps.params.id
   let rsvp = [{
     contactInfo: {
@@ -107,7 +108,7 @@ function mapStateToProps(state, ownProps) {
 
   return {
     rsvp: rsvp,
-    songs: state.songs
+    songs: state.MusicSearchReducer
   }
 }
 
