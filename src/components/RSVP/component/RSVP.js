@@ -17,6 +17,7 @@ class RSVP extends Component {
     this.updateRSVPState = this.updateRSVPState.bind(this)
     this.saveRSVP = this.saveRSVP.bind(this)
     this.addSong = this.addSong.bind(this)
+    this.updateCheckBox = this.updateCheckBox.bind(this)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,18 +37,37 @@ class RSVP extends Component {
     return this.setState({rsvp})
   }
 
+  updateCheckBox(event) {
+    const field = event.target.name
+    let rsvp = this.state.rsvp
+
+    rsvp[field] = event.target.value
+    if(field == "plusOne") {
+      return this.setState({checkBoxValuePlusOne: !this.state.checkBoxValuePlusOne})
+    }else {
+      return this.setState({checkBoxValueAttending: !this.state.checkBoxValueAttending})
+    }
+  }
+
 
   saveRSVP(event) {
     event.preventDefault()
-    this.props.actions.saveRSVP(this.state.rsvp)
+    if(this.props.song) {
+      this.props.actions.saveRSVP([this.state.rsvp, this.props.song, {plusOne: this.state.checkBoxValuePlusOne, attending: this.state.checkBoxValueAttending}])
+    }else {
+      this.props.actions.saveRSVP([this.state.rsvp, {plusOne: this.state.checkBoxValuePlusOne, attending: this.state.checkBoxValueAttending}])
+    }
+
     this.context.router.push('/location')
   }
 
   addSong(event) {
     event.preventDefault()
     this.setState({songs: {}})
-    this.props.actions.fetchSong(this.state.rsvp.songName)
+    this.props.actions.fetchSong(this.state.rsvp.searchSong)
   }
+
+
 
   render() {
     console.log("props", this.props)
@@ -59,11 +79,17 @@ class RSVP extends Component {
           <RSVPForm
             onSave={this.saveRSVP}
             onChange={this.updateRSVPState}
-            options={["2", "3", "4"]}
+            options={["1", "2", "3", "4"]}
             secondaryOptions={["Beef", "Chicken"]}
             songs={this.props.song}
+            checkBoxValue={this.updateCheckBox}
           />
-          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState} options={this.props.songs} dispatch={this.props.actions} />
+          <MusicSearch
+            onSave={this.addSong}
+            onChange={this.updateRSVPState}
+            options={this.props.songs}
+            dispatch={this.props.actions}
+          />
         </div>
       </div>
     )
@@ -72,7 +98,9 @@ class RSVP extends Component {
 
 RSVP.propTypes = {
   rsvp: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+  actions: PropTypes.object.isRequired,
+  song: PropTypes.array,
+  songs: PropTypes.array
 }
 
 RSVP.contextTypes = {

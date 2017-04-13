@@ -1,8 +1,9 @@
 import React, {PropTypes} from 'react'
 import TextInput from '../common/TextInput'
 import SelectInput from '../common/SelectInput'
+import CheckBox from '../common/CheckBox'
 
-const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, songs, errors}) => {
+const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, songs, checkBoxValue, errors}) => {
   return (
     <div className="formComponent">
       <form className="Form">
@@ -23,13 +24,8 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
           onChange={onChange}
         />
         <div className="selectInputs">
-          <SelectInput
-            name="attending"
-            label="Attending"
-            defaultOption="1"
-            options={options}
-            onChange={onChange}
-          />
+          <CheckBox name="plusOne" label="plus 1" value={checkBoxValue} onChange={checkBoxValue}/>
+          <CheckBox name="attending" label="attending" value={checkBoxValue} onChange={checkBoxValue}/>
 
           <SelectInput
             name="plate"
@@ -70,7 +66,9 @@ FormComponent.propTypes = {
   loading: PropTypes.bool,
   errors: PropTypes.object,
   options: PropTypes.array,
-  secondaryOptions: PropTypes.array
+  secondaryOptions: PropTypes.array,
+  songs: PropTypes.array,
+  checkBoxChange: PropTypes.bool
 }
 
 export default FormComponent

@@ -39,13 +39,45 @@ export function loadRSVPs() {
 }
 
 export function saveRSVP(rsvp) {
+  console.log("rsvp", rsvp)
+
+
+
+  let postObject = {
+    "contactInfo": {
+      "firstName": rsvp[0].firstName,
+      "lastName": rsvp[0].lastName,
+      "emailAddress": rsvp[0].email
+    },
+    "attending": rsvp[2].attending,
+    "plusOne": rsvp[2].plusOne,
+    "mealChoice": [rsvp[0].plate],
+    "songRequests": [
+      {
+        "artist": rsvp[1][0][0],
+        "albumName": rsvp[1][0][1],
+        "songName": rsvp[1][0][2]
+      },
+      {
+        "artist": rsvp[1][1][0],
+        "albumName": rsvp[1][1][1],
+        "songName": rsvp[1][1][2]
+      },
+      {
+        "artist": rsvp[1][2][0],
+        "albumName": rsvp[1][2][1],
+        "songName": rsvp[1][2][2]
+      },
+      {
+        "artist": rsvp[1][3][0],
+        "albumName": rsvp[1][3][1],
+        "songName": rsvp[1][3][2]
+      }
+    ]
+  }
+
   return function (dispatch, getState) {
-    return RSVPApi.saveRSVP(rsvp).then(savedRSVP => {
-      rsvp.id ? dispatch(updaterRSVPSuccess(savedRSVP)) :
-        dispatch(createRSVP(savedRSVP))
-    }).catch(error => {
-      throw(error)
-    })
+    return axios.post(`http://localhost:8080/guest`, postObject)
   }
 }
 
