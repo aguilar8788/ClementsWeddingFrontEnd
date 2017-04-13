@@ -9,7 +9,6 @@ class Info extends Component {
         return (
             <div className="page-one-bg infoPage container-fluid">
               <Navigation className="mainNav" path={this.props.location}/>
-              <h1>Clement's Wedding</h1>
               <div className="infoContainer">
                 <p className="infoText">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie

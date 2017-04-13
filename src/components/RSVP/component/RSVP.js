@@ -24,6 +24,7 @@ class RSVP extends Component {
       this.setState({rsvp: Object.assign({}, nextProps.rsvp)})
     }
     this.setState({songs: Object.assign({}, nextProps.songs)})
+    this.setState({song: Object.assign({}, nextProps.song)})
   }
 
   updateRSVPState(event) {
@@ -44,6 +45,7 @@ class RSVP extends Component {
 
   addSong(event) {
     event.preventDefault()
+    this.setState({songs: {}})
     this.props.actions.fetchSong(this.state.rsvp.songName)
   }
 
@@ -59,8 +61,9 @@ class RSVP extends Component {
             onChange={this.updateRSVPState}
             options={["2", "3", "4"]}
             secondaryOptions={["Beef", "Chicken"]}
+            songs={this.props.song}
           />
-          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState} options={this.props.songs} />
+          <MusicSearch onSave={this.addSong} onChange={this.updateRSVPState} options={this.props.songs} dispatch={this.props.actions} />
         </div>
       </div>
     )
@@ -77,7 +80,6 @@ RSVP.contextTypes = {
 }
 
 function mapStateToProps(state, ownProps) {
-  console.log("state in props", state.MusicSearchReducer)
   const rsvpId = ownProps.params.id
   let rsvp = [{
     contactInfo: {
@@ -108,7 +110,8 @@ function mapStateToProps(state, ownProps) {
 
   return {
     rsvp: rsvp,
-    songs: state.MusicSearchReducer
+    songs: state.MusicSearchReducer,
+    song: state.addSongReducer
   }
 }
 

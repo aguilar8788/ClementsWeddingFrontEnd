@@ -2,7 +2,8 @@ import {
   CREATE_RSVP_SUCCESS,
   LOAD_RSVP_SUCCESS,
   UPDATE_RSVP_SUCCESS,
-  ADD_SONG_SUCCESS
+  ADD_SONG_SUCCESS,
+  ADD_TO_FORM
 } from '../../../actions/actionTypes'
 import RSVPApi from '../../../api/mockRSVPApi'
 import axios from 'axios';
@@ -21,6 +22,10 @@ export function updaterRSVPSuccess(rsvp) {
 
 export function addSongSuccess(songs) {
   return {type: ADD_SONG_SUCCESS, songs}
+}
+
+export function addSong(song) {
+  return {type: ADD_TO_FORM, song}
 }
 
 export function loadRSVPs() {
@@ -48,11 +53,16 @@ export function fetchSong(search) {
   return function (dispatch, getState) {
     return axios.get(`http://localhost:8080/song-list/${search}`)
       .then(response => {
-        console.log("reponse in actions", response)
         dispatch(addSongSuccess(response.data.results))
       })
       .catch(error => {
         throw(error)
       })
+  }
+}
+
+export function addSongToForm(song) {
+  return function(dispatch) {
+    return dispatch(addSong(song))
   }
 }

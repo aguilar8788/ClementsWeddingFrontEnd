@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import TextInput from '../common/TextInput'
 import SelectInput from '../common/SelectInput'
 
-const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, errors}) => {
+const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, songs, errors}) => {
   return (
     <div className="formComponent">
       <form className="Form">
@@ -41,12 +41,12 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, er
         </div>
         <div className="songsToSubmit">
           <ul>
-            <li>song</li>
-            <li>song</li>
+            <li>{songs[0] ? songs[0][0] : " "}</li>
+            <li>{songs[1] ? songs[1][0] : " "}</li>
           </ul>
           <ul>
-            <li>song</li>
-            <li>song</li>
+            <li>{songs[2] ? songs[2][0] : " "}</li>
+            <li>{songs[3] ? songs[3][0] : " "}</li>
           </ul>
         </div>
         <div className="submitButton">

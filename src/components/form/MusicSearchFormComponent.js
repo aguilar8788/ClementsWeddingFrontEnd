@@ -1,18 +1,29 @@
 import React, {PropTypes} from 'react'
 import TextInput from '../common/TextInput'
 
-const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) => {
-  if (options[0]) {
-    console.log("options in music form", options[0].artistName)
+const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors, dispatch}) => {
+  function saveSong(event) {
+    event.preventDefault()
   }
 
   function formatMusicDate(data) {
-    return data.map(song => {
+    return data.map((song, index) => {
       return (
-        <ul className="songInfo">
-          <li>{song.artistName}</li>
-          <li>{song.trackName}</li>
-          <li>{song.collectionName}<button>add song</button></li>
+        <ul key={index} className="songInfo">
+          <li className="infoCells">{song.artistName}</li>
+          <li className="infoCells">{song.trackName}</li>
+          <div className="buttonDiv">
+            <button
+              type="submit"
+              className="addButton"
+              onClick={event => {
+                event.preventDefault()
+                dispatch.addSongToForm([song.trackName, song.trackName, song.collectionName])
+              }}
+            >
+              add song
+            </button>
+          </div>
         </ul>
       )
     })
@@ -23,24 +34,22 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors}) 
       <form className="musicForm">
         <div className="musicSearchInput">
           <TextInput
-            name="songName"
-            label="Song Name"
+            name="searchSong"
+            label="Add Song Request"
             onChange={onChange}
+            placeholder="search song"
           />
           <input
-            type="searchSong"
+            type="submit"
             disabled={loading}
             value={loading ? 'Saving...' : 'Search'}
             className="btn btn-primary"
             onClick={onSave}
           />
         </div>
-        <div className="searchResults">
+        <div className={options.length > 0 ? "searchResults" : "noSearchResults"}>
           <ul>
-
-
-              {options ? formatMusicDate(options) : " "}
-
+            {options ? formatMusicDate(options) : " "}
           </ul>
         </div>
       </form>
@@ -54,7 +63,8 @@ MusicSearchFormComponent.propTypes = {
   onChange: PropTypes.func.isRequired,
   loading: PropTypes.bool,
   errors: PropTypes.object,
-  options: PropTypes.array
+  options: PropTypes.array,
+  dispatch: PropTypes.object
 }
 
 export default MusicSearchFormComponent

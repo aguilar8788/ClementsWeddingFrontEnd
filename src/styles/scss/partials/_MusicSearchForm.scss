@@ -7,16 +7,45 @@
 
   .searchResults {
     width: 100%;
+    height: 21.1vw;
+    overflow: scroll;
+    .songInfo:nth-child(odd) {background: #CCC}
 
     .songInfo {
+      width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: space-between;
     }
+
+    .infoCells {
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+      width: 20vw;
+    }
+
   }
 
   .musicSearchInput {
     border-bottom: 1px solid black;
     width: 100%;
+
+    input {
+      margin-bottom: 1px;
+    }
+  }
+
+  .addButton {
+    width: 100px;
+    height: 30px;
+  }
+
+  .buttonDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding-right: 10px;
   }
 }
