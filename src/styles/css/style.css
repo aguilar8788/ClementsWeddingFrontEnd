@@ -82,7 +82,7 @@ table {
   background-size: cover; }
 
 .page-four-bg {
-  background-color: #dfcd97;
+  background-image: url("../../images/lookingAtCityBW.jpg");
   position: absolute;
   top: 0;
   right: 0;
@@ -132,11 +132,23 @@ nav {
   font-family: "Arial Narrow"; }
 
 .Form {
+  border: 3px double black;
+  -moz-outline-radius: 2%;
+  border-radius: 2%;
   width: 30%;
   background-color: white;
-  padding: 10px;
-  border-radius: 1%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  margin: 0 20px 20px 20px;
+  padding: 5px;
+  box-shadow: 0 0 0px 5px rgba(255, 255, 255, 0.9), 0 10px 20px rgba(0, 0, 0, 0.9), 0 6px 6px rgba(0, 0, 0, 0.9); }
+  .Form h1 {
+    margin-bottom: 50px;
+    margin-top: 2%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive; }
   .Form .submitButton {
     width: 100%;
     display: flex;
@@ -145,9 +157,13 @@ nav {
     align-items: center; }
     .Form .submitButton input {
       width: 200px; }
-  .Form input {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); }
+  .Form .textInput {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border-radius: 0% !important;
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    border-bottom: 1px solid black !important; }
   .Form .selectInputs {
     display: flex;
     flex-direction: row;
@@ -155,14 +171,6 @@ nav {
     .Form .selectInputs select {
       width: 20vw; }
 
-.rsvpPage h1 {
-  margin-top: 2%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5em;
-  font-family: 'Great Vibes', cursive; }
 .rsvpPage .formComponent {
   padding-right: 10px;
   padding-left: 10px; }
@@ -173,9 +181,11 @@ nav {
   justify-content: center; }
 .rsvpPage .Form {
   width: 45vw;
-  height: auto; }
+  height: auto;
+  background: rgba(255, 255, 255, 0.9); }
 .rsvpPage .musicForm {
-  width: 40vw; }
+  width: 40vw;
+  background: rgba(255, 255, 255, 0.9); }
 .rsvpPage .songsToSubmit {
   display: flex;
   flex-direction: row;
@@ -183,11 +193,12 @@ nav {
   align-items: center; }
 
 .musicForm {
+  border: 3px double black;
   width: 30%;
   background-color: white;
   padding: 10px;
   border-radius: 2%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 0 0px 5px rgba(255, 255, 255, 0.9), 0 10px 20px rgba(0, 0, 0, 0.9), 0 6px 6px rgba(0, 0, 0, 0.9); }
   .musicForm .searchResults {
     width: 100%;
     height: 21.1vw;
@@ -258,73 +269,47 @@ nav {
   font-family: 'Great Vibes', cursive; }
 .galleryContainer .polaroidsContainer {
   width: 100vw;
-  height: auto;
+  height: 650px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
-  align-items: center; }
-.galleryContainer .polaroidOdd {
-  width: 200px;
-  height: 230px;
-  background-color: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: scroll; }
+.galleryContainer .polaroid {
+  margin: 10px;
   display: flex;
+  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 3;
   overflow: visible; }
-.galleryContainer .polaroidEven {
-  width: 200px;
-  height: 230px;
-  background-color: white;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 3;
-  overflow: visible; }
-.galleryContainer .polaroidOdd:nth-child(odd) {
-  -ms-transform: rotate(20deg);
-  /* IE 9 */
-  -webkit-transform: rotate(20deg);
-  /* Safari */
-  transform: rotate(20deg); }
-.galleryContainer .polaroidOdd:nth-child(even) {
-  -ms-transform: rotate(20deg);
-  /* IE 9 */
-  -webkit-transform: rotate(20deg);
-  /* Safari */
-  transform: rotate(-5deg); }
-.galleryContainer .polaroidEven:nth-child(even) {
-  -ms-transform: rotate(-20deg);
-  /* IE 9 */
-  -webkit-transform: rotate(-20deg);
-  /* Safari */
-  transform: rotate(-20deg); }
-.galleryContainer .polaroidEven:hover {
-  position: relative;
-  width: 300px;
-  height: 330px;
-  transform: rotate(0deg);
-  z-index: 4;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-.galleryContainer .polaroidOdd:hover {
-  position: relative;
-  width: 300px;
-  height: 330px;
-  transform: rotate(0deg);
-  z-index: 4;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-.galleryContainer .polaroidselected {
-  position: absolute; }
 .galleryContainer .image {
-  margin-top: 10px;
-  margin-bottom: 50px;
+  border-radius: 1%;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin: 5px;
   background-color: black;
-  width: 90%;
-  height: 75%; }
+  width: 200px;
+  height: 300px; }
+.galleryContainer .image:hover {
+  position: relative;
+  width: 250px;
+  height: 400px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+.galleryContainer .imageWide {
+  border-radius: 1%;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin: 5px;
+  background-color: black;
+  width: 300px;
+  height: 200px; }
+.galleryContainer .imageWide:hover {
+  position: relative;
+  width: 400px;
+  height: 250px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
 /*# sourceMappingURL=style.css.map */

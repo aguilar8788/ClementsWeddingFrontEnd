@@ -11,6 +11,7 @@ const compiler = webpack(config)
 
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
+  stats: 'errors-only',
   publicPath: config.output.publicPath
 }));
 

@@ -1,7 +1,6 @@
 @import "../mixins/mainHeading";
 
 .rsvpPage {
-  @include mainHeadingStyle();
   .formComponent {
     padding-right: 10px;
     padding-left: 10px;
@@ -18,10 +17,12 @@
   .Form {
     width: 45vw;
     height: auto;
+    background:rgba(255,255,255,0.9)
   }
 
   .musicForm {
     width: 40vw;
+    background:rgba(255,255,255,0.9)
   }
 
   .songsToSubmit {
@@ -30,4 +31,5 @@
     justify-content: space-around;
     align-items: center;
   }
+
 }

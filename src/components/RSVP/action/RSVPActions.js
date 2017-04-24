@@ -5,7 +5,7 @@ import {
   ADD_SONG_SUCCESS,
   ADD_TO_FORM
 } from '../../../actions/actionTypes'
-import RSVPApi from '../../../api/mockRSVPApi'
+import RSVPApi from '../../../api/imageApi'
 import axios from 'axios';
 
 export function loadRSVPSuccess(rsvps) {
@@ -39,9 +39,6 @@ export function loadRSVPs() {
 }
 
 export function saveRSVP(rsvp) {
-  console.log("rsvp", rsvp)
-
-
 
   let postObject = {
     "contactInfo": {

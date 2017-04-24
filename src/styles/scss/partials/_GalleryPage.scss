@@ -5,86 +5,57 @@
 
   .polaroidsContainer{
     width:100vw;
-    height: auto;
+    height: 650px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
   }
 
-  .polaroidOdd {
-    width: 200px;
-    height: 230px;
-    background-color: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  .polaroid {
+    margin: 10px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
     transition: all 0.6s cubic-bezier(.25,.8,.25,1);
     z-index: 3;
     overflow: visible;
-  }
-
-  .polaroidEven {
-    width: 200px;
-    height: 230px;
-    background-color: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: all 0.6s cubic-bezier(.25,.8,.25,1);
-    z-index: 3;
-    overflow: visible;
-  }
-
-  .polaroidOdd:nth-child(odd) {
-    -ms-transform: rotate(20deg); /* IE 9 */
-    -webkit-transform: rotate(20deg); /* Safari */
-    transform: rotate(20deg);
-  }
-
-  .polaroidOdd:nth-child(even) {
-    -ms-transform: rotate(20deg); /* IE 9 */
-    -webkit-transform: rotate(20deg); /* Safari */
-    transform: rotate(-5deg);
-  }
-
-  .polaroidEven:nth-child(even) {
-    -ms-transform: rotate(-20deg); /* IE 9 */
-    -webkit-transform: rotate(-20deg); /* Safari */
-    transform: rotate(-20deg);
-  }
-
-  .polaroidEven:hover {
-    position: relative;
-    width: 300px;
-    height: 330px;
-    transform: rotate(0deg);
-    z-index: 4;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  }
-
-  .polaroidOdd:hover {
-    position: relative;
-    width: 300px;
-    height: 330px;
-    transform: rotate(0deg);
-    z-index: 4;
-    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-  }
-
-  .polaroidselected {
-    position: absolute;
-
   }
 
   .image {
-    margin-top: 10px;
-    margin-bottom: 50px;
+    border-radius: 1%;
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 5px;
     background-color: black;
-    width:90%;
-    height:75%;
+    width:200px;
+    height:300px;
+  }
+
+  .image:hover {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+  .imageWide {
+    border-radius: 1%;
+    transition: all 0.5s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    margin: 5px;
+    background-color: black;
+    width:300px;
+    height:200px;
+  }
+
+  .imageWide:hover {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
   }
 }

@@ -1,5 +1,5 @@
 import {
-  ADD_SONG_SUCCESS,
+  ADD_SONG_SUCCESS
 } from '../../../actions/actionTypes'
 import initialState from './initialState'
 

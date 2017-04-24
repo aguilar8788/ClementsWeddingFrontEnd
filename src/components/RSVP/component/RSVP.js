@@ -70,8 +70,6 @@ class RSVP extends Component {
 
 
   render() {
-    console.log("props", this.props)
-    console.log("state", this.state)
     return (
       <div className="page-four-bg rsvpPage container-fluid">
         <Navigation />
