@@ -106,7 +106,6 @@ RSVP.contextTypes = {
 }
 
 function mapStateToProps(state, ownProps) {
-  const rsvpId = ownProps.params.id
   let rsvp = [{
     contactInfo: {
       firstName: '',

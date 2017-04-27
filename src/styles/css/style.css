@@ -258,8 +258,17 @@ nav {
   flex-direction: column;
   align-items: center;
   justify-content: center; }
-.venueLocationContainer #map {
-  height: 100%; }
+.venueLocationContainer .lodgingMap {
+  display: flex;
+  flex-direction: row; }
+.venueLocationContainer .hotelsList {
+  width: 500px;
+  height: 300px;
+  overflow: scroll; }
+.venueLocationContainer .hotels {
+  cursor: pointer; }
+.venueLocationContainer .hotels:hover {
+  color: deepskyblue; }
 
 .galleryContainer h1 {
   margin-top: 2%;

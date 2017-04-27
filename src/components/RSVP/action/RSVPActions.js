@@ -73,7 +73,7 @@ export function saveRSVP(rsvp) {
     ]
   }
 
-  return function (dispatch, getState) {
+  return function(dispatch, getState) {
     return axios.post(`http://localhost:8080/guest`, postObject)
   }
 }
