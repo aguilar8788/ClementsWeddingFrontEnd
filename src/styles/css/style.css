@@ -230,45 +230,60 @@ nav {
     align-items: center;
     padding-right: 10px; }
 
-.venueLocationContainer h1 {
-  margin-top: 2%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5em;
-  font-family: 'Great Vibes', cursive; }
-.venueLocationContainer p {
-  color: white; }
-.venueLocationContainer h4 {
-  color: white;
-  font-family: "Arial Narrow"; }
-.venueLocationContainer .locationMaps {
-  width: 100%;
+.venueLocationContainer {
+  height: 95vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center; }
-.venueLocationContainer .map {
-  border-radius: 2%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
-.venueLocationContainer .styleBothMaps {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-.venueLocationContainer .lodgingMap {
-  display: flex;
-  flex-direction: row; }
-.venueLocationContainer .hotelsList {
-  width: 500px;
-  height: 300px;
-  overflow: scroll; }
-.venueLocationContainer .hotels {
-  cursor: pointer; }
-.venueLocationContainer .hotels:hover {
-  color: deepskyblue; }
+  justify-content: space-between; }
+  .venueLocationContainer h1 {
+    margin-top: 2%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive; }
+  .venueLocationContainer p {
+    color: white; }
+  .venueLocationContainer .locationMaps {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+  .venueLocationContainer .map {
+    margin: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  .venueLocationContainer .lodgingMapContainer {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background: rgba(255, 255, 255, 0.9);
+    width: 75%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .venueLocationContainer .lodgingMapContainer h4 {
+      color: black;
+      font-family: "Arial Narrow"; }
+    .venueLocationContainer .lodgingMapContainer .lodgingMap {
+      display: flex;
+      flex-direction: row; }
+    .venueLocationContainer .lodgingMapContainer .hotelListContainer {
+      height: 51vh;
+      margin: 10px 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      .venueLocationContainer .lodgingMapContainer .hotelListContainer .hotelsList {
+        width: auto;
+        height: 100%;
+        overflow: scroll; }
+    .venueLocationContainer .lodgingMapContainer .hotels {
+      width: 20vw;
+      color: black;
+      cursor: pointer; }
+    .venueLocationContainer .lodgingMapContainer .hotels:hover {
+      color: deepskyblue; }
 
 .galleryContainer h1 {
   margin-top: 2%;
