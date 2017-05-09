@@ -44,9 +44,32 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    .attendingContainer {
+      display: flex;
+      flex-direction: row;
+      p {
+        margin-right: -10px;
+      }
+      .attendingCheckBoxes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+
+        label {
+          margin-right: 10px;
+          margin-left: 9px;
+        }
+      }
+    }
 
     select {
       width: 20vw;
+    }
+
+    input {
+      margin-left: 10px;
     }
   }
 }

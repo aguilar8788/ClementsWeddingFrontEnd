@@ -168,8 +168,24 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around; }
+    .Form .selectInputs .attendingContainer {
+      display: flex;
+      flex-direction: row; }
+      .Form .selectInputs .attendingContainer p {
+        margin-right: -10px; }
+      .Form .selectInputs .attendingContainer .attendingCheckBoxes {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px; }
+        .Form .selectInputs .attendingContainer .attendingCheckBoxes label {
+          margin-right: 10px;
+          margin-left: 9px; }
     .Form .selectInputs select {
       width: 20vw; }
+    .Form .selectInputs input {
+      margin-left: 10px; }
 
 .rsvpPage .formComponent {
   padding-right: 10px;
