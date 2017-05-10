@@ -1,5 +1,6 @@
 import {
-  ADD_TO_FORM
+  ADD_TO_FORM,
+  DELETE_SONG_FROM_FORM
 } from '../../../actions/actionTypes'
 import initialState from './initialState'
 
@@ -10,6 +11,12 @@ export default function addSongToFormReducer(state = [], action) {
         ...state,
         action.song
       ]
+      case DELETE_SONG_FROM_FORM:
+        console.log("song", action.songs)
+        return [
+            ...action.songs,
+            ...state
+            ]
     default:
       return state
   }

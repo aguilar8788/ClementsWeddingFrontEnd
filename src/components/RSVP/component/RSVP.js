@@ -68,7 +68,6 @@ class RSVP extends Component {
   }
 
 
-
   render() {
     return (
       <div className="page-four-bg rsvpPage container-fluid">
@@ -81,6 +80,7 @@ class RSVP extends Component {
             secondaryOptions={["Beef", "Chicken"]}
             songs={this.props.song}
             checkBoxValue={this.updateCheckBox}
+            dispatch={this.props.actions}
           />
           <MusicSearch
             onSave={this.addSong}

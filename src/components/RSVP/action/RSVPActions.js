@@ -3,7 +3,8 @@ import {
   LOAD_RSVP_SUCCESS,
   UPDATE_RSVP_SUCCESS,
   ADD_SONG_SUCCESS,
-  ADD_TO_FORM
+  ADD_TO_FORM,
+  DELETE_SONG_FROM_FORM
 } from '../../../actions/actionTypes'
 import RSVPApi from '../../../api/imageApi'
 import axios from 'axios';
@@ -26,6 +27,10 @@ export function addSongSuccess(songs) {
 
 export function addSong(song) {
   return {type: ADD_TO_FORM, song}
+}
+
+export function deleteSong(songs) {
+  return {type: DELETE_SONG_FROM_FORM, songs}
 }
 
 export function loadRSVPs() {
@@ -93,5 +98,20 @@ export function fetchSong(search) {
 export function addSongToForm(song) {
   return function(dispatch) {
     return dispatch(addSong(song))
+  }
+}
+
+export function deleteSongFromForm(song, songs) {
+    let mutatedArray = []
+  for(var i = 0; i < songs.length; i++) {
+      console.log("songs in loop", songs[i][0])
+    if(songs[i][0] !== song) {
+      console.log("delete this", songs[i][0])
+        mutatedArray.push(songs[i][0])
+    }
+  }
+
+  return function(dispatch) {
+    return dispatch(deleteSong(mutatedArray))
   }
 }

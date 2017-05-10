@@ -3,8 +3,16 @@ import TextInput from '../common/TextInput'
 import SelectInput from '../common/SelectInput'
 import CheckBox from '../common/CheckBox'
 
-const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, songs, checkBoxValue, errors}) => {
-  return (
+const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, songs, checkBoxValue, errors, dispatch}) => {
+
+    function removeSong(songToDelete, songs) {
+      dispatch.deleteSongFromForm(songToDelete, songs)
+    }
+
+
+
+
+    return (
     <div className="formComponent">
       <form className="Form">
         <h1>RSVP</h1>
@@ -42,13 +50,14 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
           />
         </div>
         <div className="songsToSubmit">
+          {/*change to its own component*/}
           <ul>
-            <li>{songs[0] ? songs[0][0] : " "}</li>
-            <li>{songs[1] ? songs[1][0] : " "}</li>
+            <li>{songs[0] ? songs[0][0]  : ""}<p onClick={() => removeSong(songs[0][0], songs)}>{songs[0] ? "X" : ""}</p></li>
+            <li>{songs[1] ? songs[1][0] : " "}<p onClick={() => removeSong(songs[1][0], songs)}>{songs[1] ? "X" : ""}</p></li>
           </ul>
           <ul>
-            <li>{songs[2] ? songs[2][0] : " "}</li>
-            <li>{songs[3] ? songs[3][0] : " "}</li>
+            <li>{songs[2] ? songs[2][0] : " "}<p onClick={() => removeSong(songs[2][0], songs)}>{songs[2] ? "X" : ""}</p></li>
+            <li>{songs[3] ? songs[3][0] : " "}<p onClick={() => removeSong(songs[3][0], songs)}>{songs[3] ? "X" : ""}</p></li>
           </ul>
         </div>
         <div className="submitButton">
@@ -63,7 +72,6 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
       </form>
     </div>
   )
-
 }
 
 FormComponent.propTypes = {
