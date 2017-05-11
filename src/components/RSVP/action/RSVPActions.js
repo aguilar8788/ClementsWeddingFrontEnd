@@ -44,7 +44,7 @@ export function loadRSVPs() {
 }
 
 export function saveRSVP(rsvp) {
-
+console.log("what I am sending", rsvp)
   let postObject = {
     "contactInfo": {
       "firstName": rsvp[0].firstName,
@@ -57,23 +57,23 @@ export function saveRSVP(rsvp) {
     "songRequests": [
       {
         "artist": rsvp[1][0][0],
-        "albumName": rsvp[1][0][1],
-        "songName": rsvp[1][0][2]
+        "albumName": rsvp[1][0][2],
+        "songName": rsvp[1][0][1]
       },
       {
         "artist": rsvp[1][1][0],
-        "albumName": rsvp[1][1][1],
-        "songName": rsvp[1][1][2]
+        "albumName": rsvp[1][1][2],
+        "songName": rsvp[1][1][1]
       },
       {
         "artist": rsvp[1][2][0],
-        "albumName": rsvp[1][2][1],
-        "songName": rsvp[1][2][2]
+        "albumName": rsvp[1][2][2],
+        "songName": rsvp[1][2][1]
       },
       {
         "artist": rsvp[1][3][0],
-        "albumName": rsvp[1][3][1],
-        "songName": rsvp[1][3][2]
+        "albumName": rsvp[1][3][2],
+        "songName": rsvp[1][3][1]
       }
     ]
   }
@@ -97,20 +97,19 @@ export function fetchSong(search) {
 
 export function addSongToForm(song) {
   return function(dispatch) {
+	  console.log("inside addSong", song)
     return dispatch(addSong(song))
   }
 }
 
 export function deleteSongFromForm(song, songs) {
     let mutatedArray = []
-  for(var i = 0; i < songs.length; i++) {
-      console.log("songs in loop", songs[i][0])
-    if(songs[i][0] !== song) {
-      console.log("delete this", songs[i][0])
-        mutatedArray.push(songs[i][0])
+  for(let i = 0; i < songs.length; i++) {
+    if(songs[i] !== song) {
+        mutatedArray.push(songs[i])
     }
   }
-
+  console.log("inside delete", mutatedArray)
   return function(dispatch) {
     return dispatch(deleteSong(mutatedArray))
   }

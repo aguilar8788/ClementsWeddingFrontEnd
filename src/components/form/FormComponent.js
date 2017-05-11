@@ -8,10 +8,7 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
     function removeSong(songToDelete, songs) {
       dispatch.deleteSongFromForm(songToDelete, songs)
     }
-
-
-
-
+console.log("songs", songs)
     return (
     <div className="formComponent">
       <form className="Form">
@@ -52,12 +49,12 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
         <div className="songsToSubmit">
           {/*change to its own component*/}
           <ul>
-            <li>{songs[0] ? songs[0][0]  : ""}<p onClick={() => removeSong(songs[0][0], songs)}>{songs[0] ? "X" : ""}</p></li>
-            <li>{songs[1] ? songs[1][0] : " "}<p onClick={() => removeSong(songs[1][0], songs)}>{songs[1] ? "X" : ""}</p></li>
+            <li>{songs[0] ? songs[0][1]  : ""}<p onClick={() => removeSong(songs[0], songs)}>{songs[0] ? "X" : ""}</p></li>
+            <li>{songs[1] ? songs[1][1] : " "}<p onClick={() => removeSong(songs[1], songs)}>{songs[1] ? "X" : ""}</p></li>
           </ul>
           <ul>
-            <li>{songs[2] ? songs[2][0] : " "}<p onClick={() => removeSong(songs[2][0], songs)}>{songs[2] ? "X" : ""}</p></li>
-            <li>{songs[3] ? songs[3][0] : " "}<p onClick={() => removeSong(songs[3][0], songs)}>{songs[3] ? "X" : ""}</p></li>
+            <li>{songs[2] ? songs[2][1] : " "}<p onClick={() => removeSong(songs[2], songs)}>{songs[2] ? "X" : ""}</p></li>
+            <li>{songs[3] ? songs[3][1] : " "}<p onClick={() => removeSong(songs[3], songs)}>{songs[3] ? "X" : ""}</p></li>
           </ul>
         </div>
         <div className="submitButton">

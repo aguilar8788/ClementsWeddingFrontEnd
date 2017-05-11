@@ -6,7 +6,6 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors, d
   function saveSong(event) {
     event.preventDefault()
   }
-
   // function formatMusicDate(data) {
   //   return data.map((song, index) => {
   //     return (

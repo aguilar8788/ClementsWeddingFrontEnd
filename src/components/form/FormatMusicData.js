@@ -14,7 +14,7 @@ const FormatMusicData = (songData, dispatch) => {
                 className="addButton"
                 onClick={event => {
                   event.preventDefault()
-                  dispatch.addSongToForm([song.trackName, song.trackName, song.collectionName])
+                  dispatch.addSongToForm([song.artistName, song.trackName, song.collectionName])
                 }}
               >
                 add song

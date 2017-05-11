@@ -19,8 +19,8 @@ class RSVP extends Component {
     this.addSong = this.addSong.bind(this)
     this.updateCheckBox = this.updateCheckBox.bind(this)
   }
-
-  componentWillReceiveProps(nextProps) {
+  
+componentWillReceiveProps(nextProps) {
     if (this.props.rsvp.id != nextProps.rsvp.id) {
       this.setState({rsvp: Object.assign({}, nextProps.rsvp)})
     }
@@ -69,6 +69,7 @@ class RSVP extends Component {
 
 
   render() {
+	  console.log("props", this.props)
     return (
       <div className="page-four-bg rsvpPage container-fluid">
         <Navigation />
