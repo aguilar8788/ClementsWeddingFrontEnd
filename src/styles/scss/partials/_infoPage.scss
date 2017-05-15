@@ -28,3 +28,42 @@
   }
 
 }
+
+@media only screen
+  and (min-device-width: 300px)
+  and (max-device-width: 667px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+	.infoPage {
+ 		h1 {
+			padding-top: 10px;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 4em;
+			width: 75%;
+			text-align: center;	
+		} 
+		p {
+    color: white;
+  }
+
+  .infoContainer {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .coupleImage {
+ 		display: none; 
+	}
+
+  .infoText {
+    width:70%;
+    font-size: 18px;
+    font-family: "Arial Narrow";
+  }
+
+}
+}
+

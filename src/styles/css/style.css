@@ -131,6 +131,29 @@ nav {
   font-size: 18px;
   font-family: "Arial Narrow"; }
 
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .infoPage h1 {
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 4em;
+    width: 75%;
+    text-align: center; }
+  .infoPage p {
+    color: white; }
+  .infoPage .infoContainer {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+  .infoPage .coupleImage {
+    display: none; }
+  .infoPage .infoText {
+    width: 70%;
+    font-size: 18px;
+    font-family: "Arial Narrow"; } }
 .Form {
   border: 3px double black;
   -moz-outline-radius: 2%;
@@ -186,6 +209,14 @@ nav {
       width: 20vw; }
     .Form .selectInputs input {
       margin-left: 10px; }
+  .Form .formSongListElement {
+    display: flex;
+    flex-direction: row; }
+    .Form .formSongListElement p {
+      margin-left: 10px;
+      color: red;
+      font-weight: bold;
+      cursor: pointer; }
 
 .rsvpPage .formComponent {
   padding-right: 10px;
@@ -208,6 +239,23 @@ nav {
   justify-content: space-around;
   align-items: center; }
 
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .rsvpPage h1 {
+    display: none; }
+  .rsvpPage .Form {
+    width: 100vw;
+    height: auto; }
+    .rsvpPage .Form background:rgba(255,255,255,0.9)
+    .field {
+      color: blue;
+      width: 50px; }
+  .rsvpPage .selectBox {
+    padding-right: 0;
+    font-size: 10px;
+    width: 16vw !important; }
+  .rsvpPage .musicForm {
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.9); } }
 .musicForm {
   border: 3px double black;
   width: 30%;
@@ -353,5 +401,9 @@ nav {
   width: 400px;
   height: 250px;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .galleryContainer h1 {
+    display: none; } }
 
 /*# sourceMappingURL=style.css.map */

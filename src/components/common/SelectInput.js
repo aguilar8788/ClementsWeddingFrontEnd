@@ -9,7 +9,7 @@ const SelectInput = ({name, label, onChange, defaultOption, value, error, option
             name={name}
             value={value}
             onChange={onChange}
-            className="form-control"
+            className="form-control selectBox"
           >
             <option value="">{defaultOption}</option>
             {options.map((options) => {

@@ -1,35 +1,69 @@
 @import "../mixins/mainHeading";
 
 .rsvpPage {
-  .formComponent {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
+	.formComponent {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
 
-  .formContainer {
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+	.formContainer {
+		width: 100vw;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
 
-  }
+	}
 
-  .Form {
-    width: 45vw;
-    height: auto;
-    background:rgba(255,255,255,0.9)
-  }
+	.Form {
+		width: 45vw;
+		height: auto;
+		background:rgba(255,255,255,0.9)
+	}
 
-  .musicForm {
-    width: 40vw;
-    background:rgba(255,255,255,0.9)
-  }
+	.musicForm {
+		width: 40vw;
+		background:rgba(255,255,255,0.9)
+	}
 
-  .songsToSubmit {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
+	.songsToSubmit {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		align-items: center;
+	}
 
 }
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+	.rsvpPage {
+		h1 {
+			display: none;	
+		}
+
+		.Form {
+			width: 100vw;
+			height: auto;
+			background:rgba(255,255,255,0.9)
+
+			.field {
+				color: blue;
+				width: 50px;	
+			}
+		}
+		.selectBox {
+
+			padding-right: 0;
+			font-size: 10px;
+			width: 16vw !important;	
+		}
+	.musicForm {
+		width: 100vw;
+		background:rgba(255,255,255,0.9)
+	}
+
+	}
+}
+

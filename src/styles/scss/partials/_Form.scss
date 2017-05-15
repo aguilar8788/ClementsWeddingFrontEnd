@@ -72,4 +72,15 @@
       margin-left: 10px;
     }
   }
+
+	.formSongListElement {
+		display: flex;
+		flex-direction: row;
+		p {
+			margin-left: 10px;
+			color: red;
+			font-weight: bold;
+			cursor: pointer;	
+		}	
+	}
 }

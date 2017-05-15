@@ -40,11 +40,9 @@ class VenueLocation extends Component {
     this.setState({location: ""})
     this.setState({hotelsNearby: [locationName]})
     this.props.actions.addLocationChoice(location)
-    console.log("props in function", this.props)
   }
 
   renderHotelsList(hotels) {
-    console.log("hotels", hotels)
     if (hotels) {
       if (hotels.length > 1) {
         return hotels.map((hotel, iterator) => {
@@ -78,8 +76,6 @@ class VenueLocation extends Component {
 
   render() {
     let location = this.props.location ? this.props.location.venueLocation : " "
-    console.log("proppsss", this.props)
-    console.log("state", this.state)
     return (
       <div className="page-two-bg container-fluid">
         <Navigation />
