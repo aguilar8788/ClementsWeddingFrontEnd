@@ -1,73 +1,147 @@
 @import "../mixins/mainHeading";
 
 .venueLocationContainer {
-  @include mainHeadingStyle();
-  p {
-    color: white;
-  }
-  height: 95vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	@include mainHeadingStyle();
+	p {
+		color: white;
+	}
+	height: 95vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-  .locationMaps {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	.locationMaps {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 
-  }
+	}
 
-  .map {
-    margin: 10px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
+	.map {
+		margin: 10px;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	}
 
 
-  .lodgingMapContainer {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    background:rgba(255,255,255,0.9);
-    width: 75%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+	.lodgingMapContainer {
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		background:rgba(255,255,255,0.9);
+		width: 75%;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 
-    h4 {
-      color: black;
-      font-family: "Arial Narrow";
-    }
+		h4 {
+			color: black;
+			font-family: "Arial Narrow";
+		}
 
-    .lodgingMap {
-      display: flex;
-      flex-direction: row;
-    }
+		.lodgingMap {
+			display: flex;
+			flex-direction: row;
+		}
 
-    .hotelListContainer {
-      height: 51vh;
-      margin: 10px 10px 0 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+		.hotelListContainer {
+			height: 51vh;
+			margin: 10px 10px 0 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 
-      .hotelsList {
-        width: auto;
-        height: 100%;
-        overflow: scroll;
-      }
-    }
+			.hotelsList {
+				width: auto;
+				height: 100%;
+				overflow: scroll;
+			}
+		}
 
-    .hotels {
-      width: 20vw;
-      color: black;
-      cursor: pointer;
-    }
+		.hotels {
+			width: 20vw;
+			color: black;
+			cursor: pointer;
+		}
 
-    .hotels:hover {
-      color: deepskyblue;
-    }
-  }
+		.hotels:hover {
+			color: deepskyblue;
+		}
+	}
 }
 
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+	.venueLocationContainer {
+		width: 100%;
+		align-items: center;
+		height: 95vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 
+
+
+		.lodgingMapContainer {
+			box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+			background:rgba(255,255,255,0.9);
+			width: 100vw;
+			height: auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+
+			.map {
+				padding: 0;
+				margin: 0;
+				width: 100%;
+				height: 40vh;
+			}
+		
+		}
+
+		.hotelListContainer {
+				width: 100%;
+			height: 51vh;
+			margin: 10px 10px 0 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			.hotelsList {
+				width: 100vw;
+				height: 100%;
+				overflow: scroll;
+			}
+.hotels {
+	text-align: center;
+			width: 100vw;
+			color: black;
+			cursor: pointer;
+		}
+
+		}
+	
+	}
+}
+
+.headingStyle{
+	margin-top: 2%;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5em;
+	font-family: 'Great Vibes', cursive;
+	padding-bottom: 5px;
+	padding-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 3em;
+	width: 75%;
+	text-align: center;	
+}

@@ -133,10 +133,11 @@ nav {
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .infoPage h1 {
+    padding-bottom: 5px;
     padding-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    font-size: 4em;
+    font-size: 3em;
     width: 75%;
     text-align: center; }
   .infoPage p {
@@ -151,7 +152,7 @@ nav {
   .infoPage .coupleImage {
     display: none; }
   .infoPage .infoText {
-    width: 70%;
+    width: 100%;
     font-size: 18px;
     font-family: "Arial Narrow"; } }
 .Form {
@@ -349,6 +350,61 @@ nav {
     .venueLocationContainer .lodgingMapContainer .hotels:hover {
       color: deepskyblue; }
 
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .venueLocationContainer {
+    width: 100%;
+    align-items: center;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; }
+    .venueLocationContainer .lodgingMapContainer {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+      background: rgba(255, 255, 255, 0.9);
+      width: 100vw;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center; }
+      .venueLocationContainer .lodgingMapContainer .map {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 40vh; }
+    .venueLocationContainer .hotelListContainer {
+      width: 100%;
+      height: 51vh;
+      margin: 10px 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .venueLocationContainer .hotelListContainer .hotelsList {
+        width: 100vw;
+        height: 100%;
+        overflow: scroll; }
+      .venueLocationContainer .hotelListContainer .hotels {
+        text-align: center;
+        width: 100vw;
+        color: black;
+        cursor: pointer; } }
+.headingStyle {
+  margin-top: 2%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  font-family: 'Great Vibes', cursive;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3em;
+  width: 75%;
+  text-align: center; }
+
 .galleryContainer h1 {
   margin-top: 2%;
   color: white;
@@ -404,6 +460,20 @@ nav {
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .galleryContainer h1 {
-    display: none; } }
+    padding-bottom: 5px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2em;
+    width: 75%;
+    text-align: center; }
+  .galleryContainer .polaroidsContainer {
+    width: 100%;
+    height: 650px;
+    overflow: scroll; }
+  .galleryContainer .image:hover {
+    box-shadow: none; }
+  .galleryContainer .imageWide:hover {
+    box-shadow: none; } }
 
 /*# sourceMappingURL=style.css.map */

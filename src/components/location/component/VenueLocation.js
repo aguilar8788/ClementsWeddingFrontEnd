@@ -78,9 +78,10 @@ class VenueLocation extends Component {
     let location = this.props.location ? this.props.location.venueLocation : " "
     return (
       <div className="page-two-bg container-fluid">
-        <Navigation />
-        <div className="venueLocationContainer">
-          <h1>Adventure is worth while...</h1>
+        <Navigation className="mainNav" />
+        
+          <h1 className="headingStyle">Adventure is worth while...</h1>
+			<div className="venueLocationContainer">
           <div className="locationMaps">
             <div className="vanueLocationMap styleBothMaps">
               <p>
