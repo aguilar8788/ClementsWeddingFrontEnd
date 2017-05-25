@@ -29,7 +29,6 @@ export function fetchHotels() {
     //change to own proxy
     return axios.get("https://galvanize-cors-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/place/textsearch/json?query=hotels+in+saugatuck+mi&location=42.694537,-86.13508&radius=10000&key=AIzaSyCzjnfkEthMXC1R3-lo-PD2vQ_TQinCZSw")
       .then(response => {
-        console.log("response", response)
         dispatch(renderHotelsNearby(response.data.results))
       })
       .catch(error => {
@@ -39,12 +38,10 @@ export function fetchHotels() {
 }
 
 export function fetchSelectedHotelData(location) {
-  console.log("inside function", location)
   return function (dispatch, getState) {
     //change to own proxy
     return axios.get("https://galvanize-cors-proxy.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?placeid=" + location + "&key=AIzaSyCzjnfkEthMXC1R3-lo-PD2vQ_TQinCZSw")
       .then(response => {
-        console.log("response", response)
         dispatch(renderSelectedHotel(response.data.result))
       })
       .catch(error => {

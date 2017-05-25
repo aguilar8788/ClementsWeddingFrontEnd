@@ -6,30 +6,8 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors, d
   function saveSong(event) {
     event.preventDefault()
   }
-  // function formatMusicDate(data) {
-  //   return data.map((song, index) => {
-  //     return (
-  //       <ul key={index} className="songInfo">
-  //         <li className="infoCells">{song.artistName}</li>
-  //         <li className="infoCells">{song.trackName}</li>
-  //         <div className="buttonDiv">
-  //           <button
-  //             type="submit"
-  //             className="addButton"
-  //             onClick={event => {
-  //               event.preventDefault()
-  //               dispatch.addSongToForm([song.trackName, song.trackName, song.collectionName])
-  //             }}
-  //           >
-  //             add song
-  //           </button>
-  //         </div>
-  //       </ul>
-  //     )
-  //   })
-  // }
 
-  return (
+	return (
     <div className="formComponent ">
       <form className="musicForm">
         <div className="musicSearchInput">

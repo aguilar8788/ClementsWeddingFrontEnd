@@ -30,7 +30,7 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
                     onChange={onChange}
                 />
                 <div className="selectInputs">
-                    <CheckBox name="plusOne" label="plus 1" value={checkBoxValue} onChange={checkBoxValue}/>
+                    <CheckBox name="plusOne" label="plus 1?" value={checkBoxValue} onChange={checkBoxValue}/>
                     <div className="attendingContainer">
                         <p>attending?</p>
                         <div className="attendingCheckBoxes">

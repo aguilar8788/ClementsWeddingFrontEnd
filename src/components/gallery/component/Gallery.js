@@ -7,7 +7,7 @@ class Gallery extends Component {
       <div className="page-three-bg container-fluid">
         <Navigation />
         <div className="galleryContainer">
-          <h1>photography alters life by holding it still...</h1>
+          <h1 className="headingStyle">photography alters life by holding it still...</h1>
           <div className="polaroidsContainer">
             <div className="polaroid">
               <img className="image" src={require('../../../images/propose.jpg')}/>

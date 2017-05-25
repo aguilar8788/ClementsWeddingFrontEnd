@@ -1,52 +1,82 @@
 .musicForm {
-  border: 3px double black;
-  width: 30%;
-  background-color: white;
-  padding: 10px;
-  border-radius: 2%;
-  box-shadow: 0  0 0px 5px rgba(255,255,255,0.9),  0 10px 20px rgba(0,0,0,0.9), 0 6px 6px rgba(0,0,0,0.9);
+	border: 3px double black;
+	width: 30%;
+	background-color: white;
+	padding: 10px;
+	border-radius: 2%;
+	box-shadow: 0  0 0px 5px rgba(255,255,255,0.9),  0 10px 20px rgba(0,0,0,0.9), 0 6px 6px rgba(0,0,0,0.9);
 
-  .searchResults {
-    width: 100%;
-    height: 21.1vw;
-    overflow: scroll;
-    .songInfo:nth-child(odd) {background: #CCC}
+	.searchResults {
+		width: 100%;
+		height: 21.1vw;
+		overflow: scroll;
+		.songInfo:nth-child(odd) {background: #CCC}
 
-    .songInfo {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
+		.songInfo {
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
 
-    .infoCells {
-      padding: 10px;
-      box-sizing: border-box;
-      overflow: hidden;
-      width: 20vw;
-    }
+		.infoCells {
+			padding: 10px;
+			box-sizing: border-box;
+			overflow: hidden;
+			width: 20vw;
+		}
 
-  }
+	}
 
-  .musicSearchInput {
-    border-bottom: 1px solid black;
-    width: 100%;
+	.musicSearchInput {
+		border-bottom: 1px solid black;
+		width: 100%;
 
-    input {
-      margin-bottom: 1px;
-    }
-  }
+		input {
+			margin-bottom: 1px;
+		}
+	}
 
-  .addButton {
-    width: 100px;
-    height: 30px;
-  }
+	.addButton {
+		width: 100px;
+		height: 30px;
+	}
 
-  .buttonDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-right: 10px;
-  }
+	.buttonDiv {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding-right: 10px;
+	}
+}
+
+@media only screen
+and (min-device-width: 300px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
+	.musicForm {	
+		.searchResults {
+			width: 100%;
+			height: 400px;
+			overflow: scroll;
+			.songInfo:nth-child(odd) {background: #CCC}
+
+			.songInfo {
+				width: 100%;
+				display: flex;
+				flex-direction: row;
+				justify-content: space-between;
+			}
+
+			.infoCells {
+				padding: 10px;
+				box-sizing: border-box;
+				overflow: hidden;
+				width: 20vw;
+			}
+
+		}
+	}
+
 }

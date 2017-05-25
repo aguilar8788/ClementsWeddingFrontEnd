@@ -1,53 +1,26 @@
 @import "./variables/colors";
 
 .page-one-bg {
-    background-image: url("../../images/infoPageBackGround.png");
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url("../../images/infoPageBackGround.png");
+	background-size:100% 100%;
+	width: 100vw;	
+	height: 100vh;
 }
 
 .page-two-bg {
-    background-image: url("../../images/locationPageBackground.png");
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url("../../images/locationPageBackground.png");
+	background-size:100% 100%;
+	height: 100vh;			
 }
 
 .page-three-bg {
-    background-color: $blush;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-color: $blush;
+	background-size:100% 100%;
+	height: 100vh;
 }
 
 .page-four-bg {
-    background-image: url("../../images/lookingAtCityBW.jpg");
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-image: url("../../images/lookingAtCityBW.jpg");
+	background-size:100% 100%;
+	height: 100vh;
 }

@@ -12,7 +12,6 @@ export default function addSongToFormReducer(state = [], action) {
 					action.song
 				]
 			case DELETE_SONG_FROM_FORM:
-				console.log("inside reducer", action.songs)
 				return [
 					...action.songs
 				]

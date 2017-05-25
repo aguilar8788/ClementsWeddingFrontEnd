@@ -1,70 +1,84 @@
 @import "../mixins/mainHeading";
 
 .infoPage {
-  @include mainHeadingStyle();
-  p {
-    color: white;
-  }
+h1 {
+font-family: 'Great Vibes', cursive;
+color: white;
 
-  .infoContainer {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .coupleImage {
-    width: 300px;
-    margin-left: 10px;
-    border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  }
+}
+	.headingStyle {
+		margin-top: -2px;
+		color: white;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 8em;
+		font-family: 'Great Vibes', cursive;
+	}
 
-  .infoText {
-    width:70%;
-    font-size: 18px;
-    font-family: "Arial Narrow";
-  }
+	p {
+		color: white;
+	}
+
+	.infoContainer {
+		width: 100%;
+		height: 500px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.coupleImage {
+		width: 300px;
+		margin-left: 10px;
+		border-radius: 50%;
+		box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+	}
+
+	.infoText {
+		width:40%;
+		font-size: 20px;
+		font-family: "Arial Narrow";
+	}
 
 }
 
 @media only screen
-  and (min-device-width: 300px)
-  and (max-device-width: 667px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+and (min-device-width: 300px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2) {
 	.infoPage {
- 		h1 {
-			padding-bottom: 5px;
-			padding-top: 10px;
-			margin-left: auto;
-			margin-right: auto;
-			font-size: 3em;
-			width: 75%;
-			text-align: center;	
-		} 
-		p {
-    color: white;
-  }
-
-  .infoContainer {
-    width: 100%;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  .coupleImage {
- 		display: none; 
-	}
-
-  .infoText {
-    width: 100%;
-    font-size: 18px;
-    font-family: "Arial Narrow";
-  }
-
+.headingStyle {
+	margin-top: 50%;
+font-size: 3em;
 }
+
+h1 {
+font-size: 20px;
+}
+	 
+		p {
+			color: white;
+		}
+
+		.infoContainer {
+			height: auto;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.coupleImage {
+			display: none; 
+		}
+
+		.infoText {
+			width: 100%;
+			font-size: 18px;
+			font-family: "Arial Narrow";
+		}
+
+	}
 }
 

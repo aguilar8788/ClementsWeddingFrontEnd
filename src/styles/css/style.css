@@ -47,51 +47,24 @@ table {
 
 .page-one-bg {
   background-image: url("../../images/infoPageBackGround.png");
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100% 100%;
+  width: 100vw;
+  height: 100vh; }
 
 .page-two-bg {
   background-image: url("../../images/locationPageBackground.png");
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100% 100%;
+  height: 100vh; }
 
 .page-three-bg {
   background-color: #F4D7D1;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100% 100%;
+  height: 100vh; }
 
 .page-four-bg {
   background-image: url("../../images/lookingAtCityBW.jpg");
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100% 100%;
+  height: 100vh; }
 
 nav {
   margin-right: 2px;
@@ -105,12 +78,15 @@ nav {
     color: deepskyblue; }
 
 .infoPage h1 {
-  margin-top: 2%;
+  font-family: 'Great Vibes', cursive;
+  color: white; }
+.infoPage .headingStyle {
+  margin-top: -2px;
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 5em;
+  font-size: 8em;
   font-family: 'Great Vibes', cursive; }
 .infoPage p {
   color: white; }
@@ -118,7 +94,7 @@ nav {
   width: 100%;
   height: 500px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center; }
 .infoPage .coupleImage {
@@ -127,26 +103,23 @@ nav {
   border-radius: 50%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 .infoPage .infoText {
-  width: 70%;
-  font-size: 18px;
+  width: 40%;
+  font-size: 20px;
   font-family: "Arial Narrow"; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .infoPage .headingStyle {
+    margin-top: 50%;
+    font-size: 3em; }
   .infoPage h1 {
-    padding-bottom: 5px;
-    padding-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 3em;
-    width: 75%;
-    text-align: center; }
+    font-size: 20px; }
   .infoPage p {
     color: white; }
   .infoPage .infoContainer {
+    height: auto;
     width: 100%;
-    height: 500px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center; }
   .infoPage .coupleImage {
@@ -241,22 +214,24 @@ nav {
   align-items: center; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  .rsvpPage h1 {
-    display: none; }
-  .rsvpPage .Form {
-    width: 100vw;
-    height: auto; }
-    .rsvpPage .Form background:rgba(255,255,255,0.9)
-    .field {
-      color: blue;
-      width: 50px; }
-  .rsvpPage .selectBox {
-    padding-right: 0;
-    font-size: 10px;
-    width: 16vw !important; }
-  .rsvpPage .musicForm {
-    width: 100vw;
-    background: rgba(255, 255, 255, 0.9); } }
+  .rsvpPage {
+    width: 100vw; }
+    .rsvpPage h1 {
+      display: none; }
+    .rsvpPage .Form {
+      width: 100vw;
+      height: auto; }
+      .rsvpPage .Form background:rgba(255,255,255,0.9)
+      .field {
+        color: blue;
+        width: 50px; }
+    .rsvpPage .selectBox {
+      padding-right: 0;
+      font-size: 10px;
+      width: 16vw !important; }
+    .rsvpPage .musicForm {
+      width: 100vw;
+      background: rgba(255, 255, 255, 0.9); } }
 .musicForm {
   border: 3px double black;
   width: 30%;
@@ -295,21 +270,60 @@ nav {
     align-items: center;
     padding-right: 10px; }
 
+@media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .musicForm .searchResults {
+    width: 100%;
+    height: 400px;
+    overflow: scroll; }
+    .musicForm .searchResults .songInfo:nth-child(odd) {
+      background: #CCC; }
+    .musicForm .searchResults .songInfo {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between; }
+    .musicForm .searchResults .infoCells {
+      padding: 10px;
+      box-sizing: border-box;
+      overflow: hidden;
+      width: 20vw; } }
+.headingStyle {
+  margin-top: -2px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  font-family: 'Great Vibes', cursive;
+  padding-bottom: 5px;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 3em;
+  width: 75%;
+  text-align: center; }
+
 .venueLocationContainer {
   height: 95vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .venueLocationContainer h1 {
-    margin-top: 2%;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 5em;
-    font-family: 'Great Vibes', cursive; }
   .venueLocationContainer p {
     color: white; }
+  .venueLocationContainer .itinerary {
+    display: flex;
+    flex-direction: row; }
+    .venueLocationContainer .itinerary ul {
+      margin-left: 10px; }
+  .venueLocationContainer li {
+    color: white; }
+  .venueLocationContainer .venueAddress {
+    display: flex;
+    flex-direction: row; }
+    .venueLocationContainer .venueAddress .address {
+      margin-left: 10px; }
+      .venueLocationContainer .venueAddress .address p:nth-child(2) {
+        margin-top: -15px; }
   .venueLocationContainer .locationMaps {
     width: 100%;
     display: flex;
@@ -351,27 +365,36 @@ nav {
       color: deepskyblue; }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .headingStyle {
+    font-size: 2em; }
+
   .venueLocationContainer {
     width: 100%;
     align-items: center;
-    height: 95vh;
+    height: 800px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; }
+    justify-content: space-around; }
+    .venueLocationContainer .venueAddress {
+      display: flex;
+      flex-direction: row; }
+      .venueLocationContainer .venueAddress .address p:nth-child(2) {
+        margin-top: -15px; }
     .venueLocationContainer .lodgingMapContainer {
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
       background: rgba(255, 255, 255, 0.9);
       width: 100vw;
-      height: auto;
+      height: 70vh !important;
       display: flex;
-      flex-direction: column;
+      flex-direction: column-reverse;
       justify-content: space-between;
       align-items: center; }
       .venueLocationContainer .lodgingMapContainer .map {
         padding: 0;
         margin: 0;
         width: 100%;
-        height: 40vh; }
+        height: 40vh;
+        padding-top: 10px; }
     .venueLocationContainer .hotelListContainer {
       width: 100%;
       height: 51vh;
@@ -381,6 +404,7 @@ nav {
       align-items: center;
       justify-content: center; }
       .venueLocationContainer .hotelListContainer .hotelsList {
+        margin-bottom: 10px;
         width: 100vw;
         height: 100%;
         overflow: scroll; }
@@ -389,8 +413,8 @@ nav {
         width: 100vw;
         color: black;
         cursor: pointer; } }
-.headingStyle {
-  margin-top: 2%;
+.galleryContainer .headingStyle {
+  margin-top: -2px;
   color: white;
   display: flex;
   justify-content: center;
@@ -404,15 +428,6 @@ nav {
   font-size: 3em;
   width: 75%;
   text-align: center; }
-
-.galleryContainer h1 {
-  margin-top: 2%;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5em;
-  font-family: 'Great Vibes', cursive; }
 .galleryContainer .polaroidsContainer {
   width: 100vw;
   height: 650px;
@@ -459,6 +474,8 @@ nav {
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .galleryContainer .headingStyle {
+    font-size: 2em; }
   .galleryContainer h1 {
     padding-bottom: 5px;
     padding-top: 10px;
