@@ -5,6 +5,8 @@ import {bindActionCreators} from 'redux'
 import * as rsvpActions from '../action/RSVPActions'
 import RSVPForm from '../../form/FormComponent'
 import MusicSearch from '../../form/MusicSearchFormComponent'
+import { toast } from 'react-toastify'
+
 
 class RSVP extends Component {
 	constructor(props, context) {
@@ -26,6 +28,21 @@ class RSVP extends Component {
 		}
 		this.setState({songs: Object.assign({}, nextProps.songs)})
 		this.setState({song: Object.assign({}, nextProps.song)})
+	}
+
+	handleClick() {
+		const Notification = ({ name }) => <div>Thank you {this.state.rsvp.firstName}, your RSVP has been submitted. We look forward to seeing you July 29th...</div>
+			const options = {
+				autoClose: 6000, 
+				type: toast.TYPE.INFO,
+				hideProgressBar: true 
+			}	
+		toast.success(
+			<Notification 
+				hideProgressBar={true} 
+			/>,
+			options
+		)
 	}
 
 	updateRSVPState(event) {
@@ -52,19 +69,33 @@ class RSVP extends Component {
 
 	saveRSVP(event) {
 		event.preventDefault()
-		if (this.props.song) {
-			this.props.actions.saveRSVP([this.state.rsvp, this.props.song, {
-				plusOne: this.state.checkBoxValuePlusOne,
-				attending: this.state.checkBoxValueAttending
-			}])
-		} else {
-			this.props.actions.saveRSVP([this.state.rsvp, {
-				plusOne: this.state.checkBoxValuePlusOne,
-				attending: this.state.checkBoxValueAttending
-			}])
-		}
+		if(this.state.rsvp.firstName && this.state.rsvp.lastName && this.state.rsvp.email){
+			if (this.props.song) {
+				this.handleClick()
+				this.props.actions.saveRSVP([this.state.rsvp, this.props.song, {
+					plusOne: this.state.checkBoxValuePlusOne,
+					attending: this.state.checkBoxValueAttending
+				}])
+			} else {
+				this.props.actions.saveRSVP([this.state.rsvp, {
+					plusOne: this.state.checkBoxValuePlusOne,
+					attending: this.state.checkBoxValueAttending
+				}])
+			}
 
-		this.context.router.push('/location')
+			this.context.router.push('/location')
+		} else {
+			const options = {
+				autoClose: 6000, 
+				type: toast.TYPE.INFO,
+				hideProgressBar: true 
+			}	
+			toast.warn(
+				"Please fill in all form fields",
+				options
+			)
+
+		}
 	}
 
 	addSong(event) {
@@ -86,6 +117,7 @@ class RSVP extends Component {
 						secondaryOptions={["Slow Roasted Pot Roast: pan gravy, roasted garlic mashed potatoes, honey glazed baby carrots"
 							, "Grilled Mango Salsa Chicken: brown rice, roasted root vegetables, mango salsa, mango coulis", 
 							"Vegetarian"]}
+							plusOne={this.state.checkBoxValuePlusOne}
 							songs={this.props.song}
 							checkBoxValue={this.updateCheckBox}
 							dispatch={this.props.actions}

@@ -44,15 +44,18 @@ export function loadRSVPs() {
 }
 
 export function saveRSVP(rsvp) {
+	console.log("rsvp", rsvp[0].plate2)
+	let secondPlate = rsvp[0].plate2 ? rsvp[0].plate2 : ""
+	
 	let postObject = {
 		"contactInfo": {
 			"firstName": rsvp[0].firstName,
 			"lastName": rsvp[0].lastName,
 			"emailAddress": rsvp[0].email
 		},
-		"attending": rsvp[0].plate != null ? rsvp[2].attending : "no",
+		"attending": rsvp[0].plate != null ? "yes" : "no",
 		"plusOne": rsvp[2].plusOne,
-		"mealChoice": [rsvp[0].plate],
+		"mealChoice": [rsvp[0].plate, secondPlate],
 		"songRequests": [
 			{
 				"artist": rsvp[1][0]? rsvp[1][0][0] : "",

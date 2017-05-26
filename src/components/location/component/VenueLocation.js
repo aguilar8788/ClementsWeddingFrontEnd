@@ -80,13 +80,13 @@ class VenueLocation extends Component {
 			<div className="page-two-bg container-fluid">
 				<Navigation className="mainNav" />
 
-				<h1 className="headingStyle">Adventure is worth while...</h1>
+				<h1 className="headingStyle">Adventure is worthwhile...</h1>
 				<div className="venueLocationContainer">
 					<div className="locationMaps">
 						<div className="vanueLocationMap styleBothMaps">
-							<p>date and time: July 30th 2017 @ 4:30 PM</p>
+							<p>date and time: July 29th 2017 @ 4:30 PM</p>
 							<div className="venueAddress">	
-								<p>Location:</p>
+								<p>location:</p>
 								<div className="address">
 									<p>	Laketown Golf and Conference Center </p>	
 									<p>	6069 Blue Star Hwy, Saugatuck, MI 49453</p>
@@ -102,7 +102,7 @@ class VenueLocation extends Component {
 							</ul>
 						</div>
 							<p>
-								below you can find lodging near the ceremony. Click on the hotel of your choice for more information.
+								*click on the hotel of your choice from the list below for more information.
 							</p>
 						</div>
 						<div className="lodgingMapContainer styleBothMaps">

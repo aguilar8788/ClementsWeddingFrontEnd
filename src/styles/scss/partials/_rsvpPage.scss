@@ -1,6 +1,11 @@
 @import "../mixins/mainHeading";
 
 .rsvpPage {
+	.plateOptions {
+		display: flex;
+		flex-direction: column;
+			
+	}
 	.formComponent {
 		padding-right: 10px;
 		padding-left: 10px;
@@ -43,9 +48,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
 		h1 {
 			display: none;	
 		}
-
+.formComponent {
+width:100vw;
+}
 		.Form {
-			width: 100vw;
+			margin-right: auto;
+			margin-left: auto;
+			width: 95vw;
 			height: auto;
 			background:rgba(255,255,255,0.9)
 
@@ -61,7 +70,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
 			width: 16vw !important;	
 		}
 	.musicForm {
-		width: 100vw;
+		margin-right: auto;
+			margin-left: auto;
+			width: 95vw;
+
 		background:rgba(255,255,255,0.9)
 	}
 

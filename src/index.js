@@ -8,12 +8,22 @@ import { Router, browserHistory } from 'react-router'
 import routes from './routes'
 require('./styles/css/style.css')
 require('../node_modules/bootstrap/dist/css/bootstrap.min.css')
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.min.css' 
 
 const store = configureStore()
-
-render (
-    <Provider store={store}>
+const App = () => {
+  return (
+    <div>
+        <Provider store={store}>
         <Router history={browserHistory} routes={routes} />
-    </Provider>,
+			</Provider>      
+			<ToastContainer />
+    </div>
+  )
+}
+render (
+    
+	<App/>,	
     document.getElementById('app')
 )

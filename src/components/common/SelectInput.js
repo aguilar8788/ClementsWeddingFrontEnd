@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react'
 import Glyphicon from 'react-bootstrap/lib/Glyphicon'
 
 const SelectInput = ({name, label, onChange, defaultOption, value, error, options}) => {
-    return (
+	return (
       <div className="form-group">
 				<label htmlFor={name}> <span>
     <Glyphicon glyph="glyphicon glyphicon-cutlery"/>

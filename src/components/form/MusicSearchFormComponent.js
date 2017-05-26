@@ -13,7 +13,7 @@ const MusicSearchFormComponent = ({options, onSave, onChange, loading, errors, d
         <div className="musicSearchInput">
           <TextInput
             name="searchSong"
-            label="Add Song Request"
+						label="Add Song Request"
             onChange={onChange}
             placeholder="search song"
           />

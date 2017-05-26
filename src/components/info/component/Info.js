@@ -12,7 +12,7 @@ class Info extends Component {
 				<div className="infoContainer">
 		
 			<h1 className="headingStyle">Mr and Mrs Clement</h1>
-			<h1>July 30th 2017</h1>
+			<h1>July 29th 2017</h1>
 			</div>
 </div>
 		)
