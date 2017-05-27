@@ -7,10 +7,8 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
 	function removeSong(songToDelete, songs) {
 		dispatch.deleteSongFromForm(songToDelete, songs)
 	}
-	console.log("plus", plusOne)
-
 	function renderSecondPlateOption(plusOneBool){
-		if(plusOneBool) {
+		if (plusOneBool) {
 			return (
 				<SelectInput
 					name="plate2"
@@ -19,6 +17,25 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
 					options={secondaryOptions}
 					onChange={onChange}
 				/>
+			)	
+		}	
+	}
+
+	function renderGuestTextInput(plusOneBool) {
+		if (plusOneBool) {
+			return (
+				<div className="guestTextInput">	
+				<TextInput 
+					name="guestFirstName"
+					label="Guest First Name"
+					onChange={onChange}
+				/>	
+				<TextInput
+					name="guestLastName"
+					label="Guest Last Name"
+					onChange={onChange}
+				/>
+		</div>
 			)	
 		}	
 	}
@@ -43,6 +60,7 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
 				label="Email"
 				onChange={onChange}
 			/>
+			{plusOne == true ? renderGuestTextInput(plusOne) : ""}
 			<div className="selectInputs">
 				<CheckBox name="plusOne" label="plus 1?" value={checkBoxValue} onChange={checkBoxValue}/>
 				<div className="attendingContainer">
@@ -90,7 +108,7 @@ const FormComponent = ({options, secondaryOptions, onSave, onChange, loading, so
 					</li>
 				</ul>
 			</div>
-			{songs[0] == null ? <p className="noteOnForm">*if you would like to add songs please do so before submitting form</p> : " "}
+			{songs.length == 0 ? <p className="noteOnForm">*if you would like to add songs please do so before submitting form</p> : " "}
 			<div className="submitButton">
 				<input
 					type="submit"

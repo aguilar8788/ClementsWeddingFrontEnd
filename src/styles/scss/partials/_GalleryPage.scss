@@ -1,6 +1,12 @@
 @import "../mixins/mainHeading";
 
 .galleryContainer {
+	margin-top:20px;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+
 	.headingStyle {
 		margin-top: -2px;
 		color: white;
@@ -17,8 +23,10 @@
 		width: 75%;
 		text-align: center;
 	}
+	
 	.polaroidsContainer{
-		width:100vw;
+		margin-left: 60px;
+		width: 100vw;
 		height: 650px;
 		display: flex;
 		flex-direction: row;

@@ -5,7 +5,7 @@ class Gallery extends Component {
   render() {
     return (
       <div className="page-three-bg container-fluid">
-        <Navigation />
+        <Navigation className="galleyNav"/>
         <div className="galleryContainer">
           <h1 className="headingStyle">photography alters life by holding it still...</h1>
           <div className="polaroidsContainer">

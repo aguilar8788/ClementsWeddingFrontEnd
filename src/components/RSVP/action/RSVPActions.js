@@ -44,13 +44,11 @@ export function loadRSVPs() {
 }
 
 export function saveRSVP(rsvp) {
-	console.log("rsvp", rsvp[0].plate2)
 	let secondPlate = rsvp[0].plate2 ? rsvp[0].plate2 : ""
-	
 	let postObject = {
 		"contactInfo": {
-			"firstName": rsvp[0].firstName,
-			"lastName": rsvp[0].lastName,
+			"firstName": rsvp[0].guestFirstName ? rsvp[0].guestFirstName + " / " + rsvp[0].firstName : rsvp[0].firstName,
+			"lastName": rsvp[0].guestLastName? rsvp[0].guestLastName + " / " + rsvp[0].lastName : rsvp[0].lastName,
 			"emailAddress": rsvp[0].email
 		},
 		"attending": rsvp[0].plate != null ? "yes" : "no",
@@ -82,12 +80,14 @@ export function saveRSVP(rsvp) {
 
 	return function (dispatch, getState) {
 		return axios.post(` https://petesportfolioserver.herokuapp.com/guest`, postObject)
+		//return axios.post(` http://localhost:8080/guest`, postObject)	
 	}
 }
 
 export function fetchSong(search) {
 	return function (dispatch, getState) {
 		return axios.get(` https://murmuring-falls-64104.herokuapp.com/song-list/${search}`)
+		//return axios.get(` http://localhost:8080/song-list/${search}`)	
 			.then(response => {
 				dispatch(addSongSuccess(response.data.results))
 			})

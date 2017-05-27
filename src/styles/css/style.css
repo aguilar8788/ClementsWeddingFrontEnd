@@ -54,7 +54,7 @@ table {
 .page-two-bg {
   background-image: url("../../images/locationPageBackground.png");
   background-size: 100% 100%;
-  height: 100vh; }
+  height: 105vh; }
 
 .page-three-bg {
   background-color: #F4D7D1;
@@ -64,7 +64,10 @@ table {
 .page-four-bg {
   background-image: url("../../images/lookingAtCityBW.jpg");
   background-size: 100% 100%;
-  height: 120vh; }
+  height: 105vh; }
+
+.page-four-bg-expanded {
+  height: 135vh; }
 
 nav {
   margin-right: 2px;
@@ -427,65 +430,72 @@ nav {
         width: 100vw;
         color: black;
         cursor: pointer; } }
-.galleryContainer .headingStyle {
-  margin-top: -2px;
-  color: white;
+.galleryContainer {
+  margin-top: 20px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 5em;
-  font-family: 'Great Vibes', cursive;
-  padding-bottom: 5px;
-  padding-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 3em;
-  width: 75%;
-  text-align: center; }
-.galleryContainer .polaroidsContainer {
-  width: 100vw;
-  height: 650px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  overflow: scroll; }
-.galleryContainer .polaroid {
-  margin: 10px;
-  display: flex;
-  justify-content: space-around;
   flex-direction: column;
-  align-items: center;
-  transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
-  z-index: 3;
-  overflow: visible; }
-.galleryContainer .image {
-  border-radius: 1%;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  margin: 5px;
-  background-color: black;
-  width: 200px;
-  height: 300px; }
-.galleryContainer .image:hover {
-  position: relative;
-  width: 250px;
-  height: 400px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
-.galleryContainer .imageWide {
-  border-radius: 1%;
-  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  margin: 5px;
-  background-color: black;
-  width: 300px;
-  height: 200px; }
-.galleryContainer .imageWide:hover {
-  position: relative;
-  width: 400px;
-  height: 250px;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+  justify-content: center;
+  align-items: center; }
+  .galleryContainer .headingStyle {
+    margin-top: -2px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-family: 'Great Vibes', cursive;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 3em;
+    width: 75%;
+    text-align: center; }
+  .galleryContainer .polaroidsContainer {
+    margin-left: 60px;
+    width: 100vw;
+    height: 650px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll; }
+  .galleryContainer .polaroid {
+    margin: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 3;
+    overflow: visible; }
+  .galleryContainer .image {
+    border-radius: 1%;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 5px;
+    background-color: black;
+    width: 200px;
+    height: 300px; }
+  .galleryContainer .image:hover {
+    position: relative;
+    width: 250px;
+    height: 400px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+  .galleryContainer .imageWide {
+    border-radius: 1%;
+    transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 5px;
+    background-color: black;
+    width: 300px;
+    height: 200px; }
+  .galleryContainer .imageWide:hover {
+    position: relative;
+    width: 400px;
+    height: 250px;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
 
 @media only screen and (min-device-width: 300px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
   .galleryContainer .headingStyle {

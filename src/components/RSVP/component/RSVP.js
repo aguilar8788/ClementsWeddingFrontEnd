@@ -31,18 +31,34 @@ class RSVP extends Component {
 	}
 
 	handleClick() {
-		const Notification = ({ name }) => <div>Thank you {this.state.rsvp.firstName}, your RSVP has been submitted. We look forward to seeing you July 29th...</div>
-			const options = {
-				autoClose: 6000, 
-				type: toast.TYPE.INFO,
-				hideProgressBar: true 
-			}	
-		toast.success(
-			<Notification 
-				hideProgressBar={true} 
-			/>,
-			options
-		)
+
+		if (this.state.rsvp.plate) {
+			const Notification = ({ name }) => <div>Thank you {this.state.rsvp.firstName}, your RSVP has been submitted. We look forward to seeing you July 29th...</div>
+				const options = {
+					autoClose: 6000, 
+					type: toast.TYPE.INFO,
+					hideProgressBar: true 
+				}	
+			toast.success(
+				<Notification 
+					hideProgressBar={true} 
+				/>,
+				options
+			)
+		} else {
+			const Notification = ({ name }) => <div>Thank you {this.state.rsvp.firstName}, your RSVP has been submitted. Sorry you are unable to make it.</div>
+				const options = {
+					autoClose: 6000, 
+					type: toast.TYPE.INFO,
+					hideProgressBar: true 
+				}	
+			toast.success(
+				<Notification 
+					hideProgressBar={true} 
+				/>,
+				options
+			)
+		}
 	}
 
 	updateRSVPState(event) {
@@ -66,24 +82,45 @@ class RSVP extends Component {
 		}
 	}
 
+	validateEmail(emailAddress) {
+		var regexEmailValidation = emailAddress.search(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/)
+		console.log(regexEmailValidation)
+		if(regexEmailValidation === 0) {
+			return true 
+		}
+		return false 
+	}
 
 	saveRSVP(event) {
+		console.log("state", this.state)
 		event.preventDefault()
-		if(this.state.rsvp.firstName && this.state.rsvp.lastName && this.state.rsvp.email){
-			if (this.props.song) {
-				this.handleClick()
-				this.props.actions.saveRSVP([this.state.rsvp, this.props.song, {
-					plusOne: this.state.checkBoxValuePlusOne,
-					attending: this.state.checkBoxValueAttending
-				}])
-			} else {
-				this.props.actions.saveRSVP([this.state.rsvp, {
-					plusOne: this.state.checkBoxValuePlusOne,
-					attending: this.state.checkBoxValueAttending
-				}])
-			}
+		if(this.state.rsvp.firstName && this.state.rsvp.lastName && this.state.rsvp.email && this.state.rsvp.plate && this.state.rsvp.attending){
+			if (this.validateEmail(this.state.rsvp.email)){	
+				if (this.props.song) {
+					this.handleClick()
+					this.props.actions.saveRSVP([this.state.rsvp, this.props.song, {
+						plusOne: this.state.checkBoxValuePlusOne,
+						attending: this.state.checkBoxValueAttending
+					}])
+				} else {
+					this.props.actions.saveRSVP([this.state.rsvp, {
+						plusOne: this.state.checkBoxValuePlusOne,
+						attending: this.state.checkBoxValueAttending
+					}])
+				}
 
-			this.context.router.push('/location')
+				this.context.router.push('/location')
+			} else {
+       const options = {
+				autoClose: 6000, 
+				type: toast.TYPE.INFO,
+				hideProgressBar: true 
+			}	
+			toast.warn(
+				"Please add a valid email address",
+				options
+			)  
+			}		
 		} else {
 			const options = {
 				autoClose: 6000, 
@@ -91,7 +128,7 @@ class RSVP extends Component {
 				hideProgressBar: true 
 			}	
 			toast.warn(
-				"Please fill in all form fields",
+				"Please complete all form fields",
 				options
 			)
 
@@ -107,7 +144,7 @@ class RSVP extends Component {
 
 	render() {
 		return (
-			<div className="page-four-bg rsvpPage container-fluid">
+			<div className={this.state.checkBoxValuePlusOne ? "page-four-bg rsvpPage container-fluid page-four-bg-expanded" : "page-four-bg rsvpPage container-fluid"}>
 				<Navigation />
 				<div className="row formContainer">
 					<RSVPForm
